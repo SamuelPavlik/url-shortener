@@ -35,7 +35,7 @@ class ShortenUrlServiceImplTest {
     @Test
     fun `when provided valid url then save it`() {
         //when
-        var mapping = UrlMapping("shortUrl", "originalUrl")
+        val mapping = UrlMapping("shortUrl", "originalUrl")
         every { urlRepository.save(any()) } answers {
             mapping
         }
