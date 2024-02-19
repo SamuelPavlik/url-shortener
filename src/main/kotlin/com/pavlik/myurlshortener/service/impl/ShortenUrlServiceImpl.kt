@@ -19,7 +19,8 @@ class ShortenUrlServiceImpl(
         return urlRepository.save(UrlMapping("short${counter++}", request.originalUrl))
     }
 
-    override fun findByShortUrl(shortUrl: String): UrlMapping? {
-        return urlRepository.findByShortUrl(shortUrl)
+    override fun findOriginalLink(shortUrl: String): String? {
+        return urlRepository.findByShortCode(shortUrl)
+            ?.originalUrl
     }
 }
