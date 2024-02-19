@@ -7,5 +7,5 @@ import org.springframework.data.repository.CrudRepository
 @EnableScan
 interface UrlRepository : CrudRepository<UrlMapping, String> {
 
-    fun findByShortUrl(shortUrl: String): UrlMapping?
+    fun findByShortCode(shortCode: String): UrlMapping?
 }

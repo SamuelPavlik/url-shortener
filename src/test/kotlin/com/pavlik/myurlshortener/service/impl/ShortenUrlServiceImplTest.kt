@@ -46,7 +46,7 @@ class ShortenUrlServiceImplTest {
         //then
         verify { urlRepository.save(any()) }
 
-        assertEquals("shortUrl", result.shortUrl)
+        assertEquals("shortUrl", result.shortCode)
         assertEquals("originalUrl", result.originalUrl)
     }
 
@@ -66,8 +66,8 @@ class ShortenUrlServiceImplTest {
             verify { urlRepository.save(capture(slot)) }
 
             //then
-            assertFalse(seenUrls.contains(slot.last().shortUrl))
-            seenUrls.add(slot.last().shortUrl)
+            assertFalse(seenUrls.contains(slot.last().shortCode))
+            seenUrls.add(slot.last().shortCode)
         }
     }
 }
