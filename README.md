@@ -25,4 +25,16 @@ docker compose -f docker-compose.yml up -d
 mvn spring-boot:run
 ```
 
+## How to use locally
+To generate a short code for a given url use the following command:
+```shell
+curl --location 'http://localhost:8080/v1/shortenUrl' \
+--header 'Content-Type: application/json' \
+--data '{
+    "originalUrl": <url/to/shorten>
+}'
+```
+
+To access the original url via the short code simply type ```http://localhost:8080/v1/<short-code>``` into your browser.
+
 ---
