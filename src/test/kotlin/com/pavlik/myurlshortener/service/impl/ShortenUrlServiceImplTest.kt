@@ -36,9 +36,8 @@ class ShortenUrlServiceImplTest {
     fun `when provided valid url then save it`() {
         //when
         val mapping = UrlMapping("shortUrl", "originalUrl")
-        every { urlRepository.save(any()) } answers {
-            mapping
-        }
+        every { urlRepository.save(any()) } answers { mapping }
+        every { urlRepository.findByShortCode(any()) } answers { null }
 
         val request = UrlCreateRequest(mapping.originalUrl)
         val result = shortenUrlService.createShortUrl(request)
@@ -57,6 +56,7 @@ class ShortenUrlServiceImplTest {
         val slot = mutableListOf<UrlMapping>()
 
         //when
+        every { urlRepository.findByShortCode(any()) } answers { null }
         every { urlRepository.save(any()) } answers { UrlMapping() }
 
         repeat (numOfReps) {
