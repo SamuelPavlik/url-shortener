@@ -3,3 +3,6 @@ amazon:
     endpoint: http://localhost:54000
   aws:
     region: ap-northeast-2
+
+server:
+  port: 5000
