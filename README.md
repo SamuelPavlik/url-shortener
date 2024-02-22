@@ -1,5 +1,19 @@
 # URL Shortener
-Simple URL shortener written in Kotlin Spring. Utilizes DynamoDB for storage of the url mappings.
+Simple URL shortener written in Kotlin Spring. Utilizes DynamoDB for storage of the url mappings. Hosted on AWS
+Elastic Beanstalk (http://myurlshortener-test.eba-esgd5rws.eu-west-1.elasticbeanstalk.com/).
+
+## API Reference
+To generate a short code for a given url use the following command:
+```shell
+curl --location 'http://myurlshortener-test.eba-esgd5rws.eu-west-1.elasticbeanstalk.com/v1/shortenUrl' \
+--header 'Content-Type: application/json' \
+--data '{
+    "originalUrl": <url/to/shorten>
+}'
+```
+
+To access the original url via the short code simply type 
+```http://myurlshortener-test.eba-esgd5rws.eu-west-1.elasticbeanstalk.com/v1/<short-code>``` into your browser.
 
 ## How to run locally
 1. Add execute permissions to the bash file.
