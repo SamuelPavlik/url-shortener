@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Create JAR deployment package
-        run: mvn clean repackage ./
+        run: mvn clean package
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
