@@ -27,7 +27,7 @@ jobs:
           aws-region: "eu-west-1"
 
       - name: Upload package to S3 bucket
-        run: aws s3 cp ./target/ MyURLShortener-0.0.1-SNAPSHOT.jar s3://my-url-shortener-deploy/
+        run: aws s3 cp ./target/MyURLShortener-0.0.1-SNAPSHOT.jar s3://my-url-shortener-deploy/
 
       - name: Create new ElasticBeanstalk Application Version
         run: |
