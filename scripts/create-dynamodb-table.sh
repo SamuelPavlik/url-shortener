@@ -10,4 +10,4 @@ aws dynamodb create-table \
     AttributeName=shortCode,KeyType=HASH \
   --provisioned-throughput ReadCapacityUnits=10,WriteCapacityUnits=10 \
   --endpoint-url http://localhost:54000 \
-  --region ap-northeast-2 || true | cat
+  --region eu-west-1 || true | cat
