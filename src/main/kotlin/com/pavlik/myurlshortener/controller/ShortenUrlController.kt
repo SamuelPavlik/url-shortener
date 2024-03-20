@@ -22,5 +22,4 @@ class ShortenUrlController (
             ?.let { response.sendRedirect(it) }
             ?:throw ResponseStatusException(HttpStatus.NOT_FOUND)
     }
-
 }
